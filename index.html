@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>My Responsive Gallery</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h2>My Responsive Gallery</h2>
+        </div>
+        <div class="main-image">
+            <img id="big-image" src="images/img1.jpg">
+        </div>
+        <div class="slider">
+            <div class="slider-inner-content">
+                <div class="slider-img-container">
+                    <img src="images/img2.jpg" alt="" id="slider-first-image" class="slider-image">
+                    <img src="images/img3.jpg" alt="" id="slider-second-image" class="slider-image">
+                    <img src="images/img4.jpg" alt="" id="slider-third-image" class="slider-image">
+                    <img src="images/img6.jpg" alt="" id="slider-third-image" class="slider-image">
+                </div>
+                <!-- <div class="slider-first-image-container">
+                </div>
+                <div class="slider-second-image-container">
+                </div>
+                <div class="slider-third-image-container">
+                </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    let images = document.querySelectorAll(".slider-image");
+    images.forEach(item => {
+        item.onclick = () => {
+            if (document.getElementById("big-image").src != item.src) {
+                document.getElementById("big-image").classList.add("fade-Out");
+                setTimeout(() => {
+                    document.getElementById("big-image").classList.remove("fade-Out");
+                    document.getElementById("big-image").src = item.src;
+                }, 250);
+            }
+        }
+    })
+</script>
+
+</html>
